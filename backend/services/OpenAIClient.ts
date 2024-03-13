@@ -10,7 +10,8 @@ export class OpenAIClientService extends OpenAI {
   searchGPT = async (prompt: string) => {
     const chatCompletion = await this.chat.completions.create({
       messages: [{ role: 'user', content: prompt }],
-      model: 'gpt-4-turbo-preview',
+      // model: 'gpt-4-turbo-preview',
+      model: 'gpt-3.5-turbo',
       n: 1,
       temperature: 0.1,
     });
