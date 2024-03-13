@@ -1,0 +1,40 @@
+version: '3.9'
+name: bakalauras
+services:
+  redis:
+    image: redis:7
+    env_file:
+      - .env
+    environment:
+      REDIS_PASSWORD: REDIS_PASSWORD
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+    restart: always
+    volumes:
+      - redis-data:/data
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASS}
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    restart: always
+  app_local:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    # command: yarn dev
+    volumes:
+      - type: bind
+        source: ./src
+        target: /app/src
+    working_dir: /app
+    ports:
+      - '${API_PORT}:${API_PORT}'
+    depends_on:
+      - db
+    env_file:
+      - ./.env.docker-compose
+volumes:
+  redis-data:

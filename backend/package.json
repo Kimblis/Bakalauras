@@ -11,6 +11,14 @@
   "bugs": {
     "url": "https://github.com/Kimblis/Bakalauras/issues"
   },
+  "scripts": {
+    "prebuild": "rimraf dist && rimraf tsconfig.tsbuildinfo",
+    "build": "npm run prebuild && tsc && tsc-alias",
+    "dev": "tsx watch src/index.ts",
+    "start": "node --experimental-specifier-resolution=node --loader ts-paths-esm-loader/transpile-only dist/backend/src/index.js",
+    "test": "jest",
+    "lint": "eslint src"
+  },
   "homepage": "https://github.com/Kimblis/Bakalauras#readme",
   "private": true,
   "devDependencies": {
@@ -42,6 +50,8 @@
     "typescript": "5.1.6"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.529.1",
+    "@aws-sdk/client-textract": "^3.529.1",
     "@fastify/cors": "8.3.0",
     "@prisma/client": "5.1.1",
     "@trpc/server": "10.13.2",
