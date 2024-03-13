@@ -9,6 +9,6 @@ RUN yarn
 # ----------- Backend ----------
 WORKDIR /app/backend
 COPY ./backend ./
-RUN npx prisma generate
+# RUN npx prisma generate
 
 EXPOSE 2030

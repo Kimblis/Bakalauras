@@ -1,7 +1,7 @@
 import { BreadCrumb } from 'primereact/breadcrumb';
 import { TemplateType } from 'primereact/utils';
 import classNames from 'classnames/bind';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { BreadcrumbData } from 'use-react-router-breadcrumbs';
 import { MainHeader } from '../Header/MainHeader';
 
@@ -9,6 +9,7 @@ import styles from '../dashboard.module.scss';
 import { useState } from 'react';
 import Sidebar from '../../Sidebar/Sidebar';
 import ContextContainer from '../../Layout/ContextContainer';
+import { Main } from '../Main/Main';
 
 const home = { icon: 'pi pi-home', url: '/dashboard' };
 const cx = classNames.bind(styles);
@@ -61,7 +62,7 @@ export const InnerDashboard: React.FC<InnerDashboardProps> = ({ children, breadc
         <div className={cx('dashboard__content')}>
           {/* Hide breadcrumbs in dashboard */}
           {!hideBreadcrumbsPath && <BreadCrumb className={cx('dashboard__breadcrumbs')} model={crumbs} home={home} />}
-          <div>Yooo</div>
+          <Main />
         </div>
       </ContextContainer>
     </>

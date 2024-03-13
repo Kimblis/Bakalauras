@@ -38,7 +38,6 @@ services:
       - '${API_PORT}:${API_PORT}'
     depends_on:
       - db
-      - redis
     env_file:
       - ./.env.docker-compose
 volumes:

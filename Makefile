@@ -12,7 +12,7 @@ clear-npm:
 
 # Start running PostgreSql and Redis servers with Docker containers
 start-services:
-	docker-compose up -d db redis
+	docker-compose up -d db
 
 # Prepare database
 prepare-db:
