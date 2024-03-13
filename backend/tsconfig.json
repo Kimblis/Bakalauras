@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "esnext",
+    "outDir": "./dist",
+
+    // [ Basics ]
+    "strict": true,
+    "checkJs": true,
+    "sourceMap": true,
+    "importHelpers": true,
+    "removeComments": true,
+    "declaration": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+
+    // [ Additional Checks ]
+    "noUnusedLocals": true,
+    "noImplicitReturns": false,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "allowUnreachableCode": false,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "strictPropertyInitialization": false,
+
+    // [ Module Resolution ]
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+
+    // [ Advanced ]
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    // [ Build ]
+    "listFiles": false,
+    "listEmittedFiles": true
+  },
+  "exclude": ["node_modules/"]
+}

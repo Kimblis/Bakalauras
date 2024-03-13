@@ -1,0 +1,51 @@
+settings:
+  import/resolver:
+    # You will also need to install and configure the TypeScript resolver
+    # See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
+    typescript: true
+    node: true
+plugins:
+  - '@typescript-eslint'
+  - '@typescript-eslint/eslint-plugin'
+  - prettier
+  - import
+  - eslint-plugin-import
+extends:
+  - airbnb-typescript/base
+  - eslint:recommended
+  - plugin:import/recommended
+  - prettier
+  - plugin:import/typescript
+  - plugin:@typescript-eslint/eslint-recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:prettier/recommended
+parser: '@typescript-eslint/parser'
+env:
+  node: true
+  commonjs: true
+  es2021: true
+root: true
+overrides: []
+parserOptions:
+  ecmaVersion: latest
+rules:
+  import/no-extraneous-dependencies:
+    - off
+  '@typescript-eslint/no-unused-expressions':
+    - 'warn'
+    - allowShortCircuit: true
+  '@typescript-eslint/lines-between-class-members':
+    - off
+  '@typescript-eslint/ban-ts-comment':
+    - off
+  '@typescript-eslint/no-namespace':
+    - off
+  '@typescript-eslint/no-unused-vars':
+    - 'warn'
+  '@typescript-eslint/no-explicit-any':
+    - 'warn'
+  'no-constant-condition':
+    - 'warn'
+  'prettier/prettier':
+    - 'warn'
+    - endOfLine: auto
