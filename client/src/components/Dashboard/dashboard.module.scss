@@ -1,0 +1,42 @@
+.dashboard {
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: all linear 150ms;
+    margin: 1.5rem 2rem;
+    // height: 100%;
+
+    @media only screen and (max-width: 560px) {
+      margin: 0.5rem !important;
+    }
+
+    @media only screen and (max-width: 420px) {
+      margin: 0rem 0rem !important;
+    }
+
+    &--student-context {
+      @media only screen and (max-width: 450px) {
+        margin-top: 54px !important;
+        height: calc(100vh - 54px) !important;
+      }
+    }
+
+    &--unfixed-header {
+      margin-top: 0rem !important;
+    }
+  }
+
+  &__breadcrumbs {
+    margin-bottom: 0.5rem;
+
+    @media only screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    height: 25px !important;
+    width: 25px !important;
+  }
+}

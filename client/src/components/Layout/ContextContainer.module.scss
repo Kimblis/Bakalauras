@@ -1,0 +1,8 @@
+$headerHeight: 5rem;
+
+.context {
+  // overflow: auto;
+  margin-top: $headerHeight;
+  height: calc(100vh - $headerHeight);
+  background-color: #eff8fa;
+}

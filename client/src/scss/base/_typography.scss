@@ -1,0 +1,49 @@
+@import '../abstracts/variables';
+
+h1 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  &.big-margin {
+    margin-bottom: 2.25rem;
+  }
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.3125rem;
+  margin-bottom: 1rem;
+  color: $color-dark-gray-3;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+
+  font-size: 1.3125rem;
+  line-height: 2.125rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  display: flex;
+  align-items: center;
+
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+  color: $color-dark-gray-2;
+}
+
+a {
+  text-decoration: none;
+  font-size: 0.875rem;
+  color: $color-primary-dark-blue;
+}
+
+p {
+  font-size: 0.875rem;
+  color: $color-dark-gray-2;
+}

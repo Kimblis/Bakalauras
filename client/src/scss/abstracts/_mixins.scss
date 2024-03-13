@@ -1,0 +1,59 @@
+@import './variables';
+
+@mixin container {
+  display: flex;
+  align-items: center;
+  // max-width: 81.25rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin contentContainer {
+  @include container;
+  background-color: $color-white;
+
+  border: 1px solid $color-light-gray-3;
+  box-shadow: 1px 1px 0.5rem rgba(52, 58, 64, 0.05);
+  border-radius: 0.375rem;
+  padding: 1rem;
+}
+
+@mixin text-truncate($max-width) {
+  width: $max-width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// breakpoints:
+@mixin for-phone-only {
+  @media (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin blue-chip-styling {
+  font-size: 0.8rem;
+  padding: 3px 5px;
+  margin: 6px 4px 0;
+  border-radius: 6px;
+  background-color: $color-lightest-blue;
+  color: $color-primary-dark-blue;
+}
+
+@mixin internalTable {
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+@mixin bubble-styles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.375rem;
+  height: 4.375rem;
+  border-radius: 50%;
+  background: $color-light-green;
+}

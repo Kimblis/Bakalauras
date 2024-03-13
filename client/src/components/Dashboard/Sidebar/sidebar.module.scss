@@ -1,0 +1,38 @@
+.sidebar {
+  &__content {
+    margin-top: 5rem;
+    max-height: calc(100% - 5rem);
+    transition: all linear 150ms;
+    width: 10rem !important;
+    z-index: 1100;
+    overflow: auto;
+
+    & > div > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 3px;
+    }
+
+    & > div {
+      justify-content: center !important;
+    }
+
+    & > a,
+    & > div > a {
+      padding: 9px 5px;
+      margin: 20px 0px;
+      display: flex;
+      justify-content: center;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    @media only screen and (max-width: 580px) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../../scss/abstracts/variables';
+
+.navigation-item {
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  color: $color-dark-gray-1;
+  font-size: 1rem;
+  min-height: 1.875rem;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 1rem !important;
+  margin: 5px 0;
+
+  &--active,
+  &:hover {
+    background: $color-lightest-blue;
+    color: $color-primary-dark-blue;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,29 @@
+$primaryColor: #0d47a1 !default;
+$primaryLightColor: #c7d2fe !default;
+$primaryDarkColor: #073379 !default;
+$primaryDarkerColor: #073379 !default;
+$primaryTextColor: #ffffff !default;
+
+// Buttons
+$buttonHoverBg: #073379;
+$buttonHoverBorderColor: #073379;
+
+$warningButtonBg: #ffac00;
+$warningButtonHoverBg: #eca003;
+
+$dangerButtonBg: #e24c4c;
+$dangerButtonHoverBg: #d23030;
+
+$secondaryButtonBg: #eff5ff;
+$secondaryButtonTextColor: #0d47a1;
+$secondaryButtonHoverBg: #dae8ff;
+$secondaryButtonHoverBorderColor: #dae8ff;
+
+$highlightBg: #eef2ff !default;
+$highlightTextColor: $primaryDarkerColor !default;
+
+$focusShadow: 0 0 0 0.2rem #eff5ff;
+
+@import '../_variables';
+@import '../../../designer/_components';
+@import '../_extensions';

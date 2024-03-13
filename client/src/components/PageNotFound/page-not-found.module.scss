@@ -1,0 +1,33 @@
+@import '../../scss/abstracts/variables';
+
+.page-not-found {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__image {
+    max-width: 29.375rem;
+    max-height: 17.5rem;
+  }
+
+  &__title {
+    font-size: 3rem;
+    color: $color-primary-dark-blue;
+    line-height: 110%;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    color: $color-dark-gray-1;
+    margin-bottom: 2.5rem;
+  }
+}

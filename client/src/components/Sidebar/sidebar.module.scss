@@ -1,0 +1,54 @@
+.sidebar {
+  display: flex;
+  overflow: auto;
+  @media only screen and (max-width: 1000px) {
+    position: fixed;
+  }
+
+  &__content {
+    margin-top: 5rem;
+    max-height: calc(100% - 5rem);
+    transition: all linear 150ms;
+    width: 300px;
+    z-index: 1100;
+
+    & > div > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 3px;
+    }
+    @media only screen and (max-width: 580px) {
+      height: 100%;
+      max-height: unset;
+      margin-top: unset;
+      z-index: 1100;
+    }
+  }
+
+  &__dismiss {
+    transform: translateX(-300px);
+    transition: all 150ms linear;
+  }
+
+  &__shrunk {
+    width: 5rem !important;
+    transition: all linear 150ms;
+
+    & > div {
+      justify-content: center !important;
+    }
+
+    & > a,
+    & > div > a {
+      padding: 9px 5px;
+      margin: 20px 0px;
+      display: flex;
+      justify-content: center;
+
+      & > div ~ span {
+        display: none;
+      }
+    }
+  }
+}
