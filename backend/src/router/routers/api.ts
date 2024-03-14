@@ -9,7 +9,7 @@ const textractClient = servicesContainer.get(TextractClientService);
 
 export const apiRouter = router({
   search: publicProcedure.input(searchDTO).mutation(async ({ input }) => {
-    const result = await openAIClient.searchGPT(input.phrase);
+    const result = await openAIClient.searchGPT(input.prompt);
     return searchDTO.parse(result);
   }),
   analyzeDocument: publicProcedure.mutation(() => {

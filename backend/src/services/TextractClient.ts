@@ -7,8 +7,8 @@ export class TextractClientService extends TextractClient {
     super({
       region: 'eu-central-1',
       credentials: {
-        accessKeyId: process.env.TEXTRACT_ACCESS_KEY_ID as string,
-        secretAccessKey: process.env.TEXTRACT_SECRET_ACCESS_KEY_ID as string,
+        accessKeyId: process.env.TEXTRACT_ACCESS_KEY as string,
+        secretAccessKey: process.env.TEXTRACT_SECRET_ACCESS_KEY as string,
       },
     });
   }
