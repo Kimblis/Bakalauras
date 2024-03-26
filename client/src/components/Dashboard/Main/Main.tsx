@@ -1,17 +1,20 @@
 import classNames from 'classnames/bind';
 
-import styles from '../dashboard.module.scss';
+import styles from './main.module.scss';
 import { Toast } from 'primereact/toast';
 import { useRef, useState } from 'react';
 import { trpc } from '../../../utils/client';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
+import { ImageUploader } from '../../ImageUploader/ImageUploader';
+import { ImageListType } from 'react-images-uploading';
 
 const cx = classNames.bind(styles);
 
 export const Main: React.FC = () => {
   const toast = useRef<Toast>(null);
   const [prompt, setPrompt] = useState('');
+  const [images, setImages] = useState<ImageListType>([]);
   const generateText = trpc.api.analyzeDocument.useMutation({
     onSuccess: () => {
       toast.current?.show({
@@ -47,7 +50,20 @@ export const Main: React.FC = () => {
 
   return (
     <div className="flex flex-column">
-      <Button onClick={() => generateText.mutate()} className={cx('secret-zone__button')} label={'Analizuot testa'} />
+      <div className="py-2 flex align-items-center justify-content-center h-full w-full">
+        <ImageUploader images={images} setImages={setImages} />
+      </div>
+      <Button
+        onClick={() => {
+          const dataUrls = images.map((image) => ({
+            dataUrl: image['data_url'],
+            name: image.file?.name,
+          }));
+          generateText.mutate(dataUrls, { onSuccess: (data) => console.log(data) });
+        }}
+        className={cx('main__button')}
+        label={'Analizuot testa'}
+      />
       <div className="flex gap-2">
         <InputText placeholder={'Ivesk uzklausa'} value={prompt} onChange={(e) => setPrompt(e.target.value)} />
         <Button
