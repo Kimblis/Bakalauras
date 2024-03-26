@@ -1,17 +1,6 @@
 version: '3.9'
 name: bakalauras
 services:
-  redis:
-    image: redis:7
-    env_file:
-      - .env
-    environment:
-      REDIS_PASSWORD: REDIS_PASSWORD
-    ports:
-      - ${REDIS_PORT}:${REDIS_PORT}
-    restart: always
-    volumes:
-      - redis-data:/data
   db:
     image: postgres:14
     environment:
@@ -36,5 +25,3 @@ services:
       - db
     env_file:
       - ./.env.docker-compose
-volumes:
-  redis-data:

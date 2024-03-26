@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "description": "Bakalauras mono repo frontend",
-   "scripts": {
+  "scripts": {
     "start": "vite",
     "build": "tsc && NODE_ENV=production vite build",
     "serve": "vite preview",
@@ -80,6 +80,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "7.39.5",
     "react-i18next": "12.2.2",
+    "react-images-uploading": "^3.1.7",
     "react-papaparse": "^4.1.0",
     "react-router-dom": "6.21.1",
     "superjson": "1.12.2",

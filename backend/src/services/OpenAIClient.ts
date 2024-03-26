@@ -15,6 +15,7 @@ export class OpenAIClientService extends OpenAI {
       n: 1,
       temperature: 0.1,
     });
+    console.log(chatCompletion);
 
     return chatCompletion.choices[0]?.message.content;
   };
